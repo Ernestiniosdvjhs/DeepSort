@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+        body{
+    padding-top: 10px;
+    padding-bottom: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.7px;
+}
+nav {
+    background-color: rgb(0, 169, 211);
+    width: calc(100% - (-10px));
+    border-bottom: 10px;
+    margin-left: -10px;
+    height: 50px;
+}
+input{
+    background-color: rgb(0, 125, 197);
+    border: 0px;
+    margin-top: 12.3px;
+    margin-left: 38%;
+    transition-duration: 70ms;
+    font-size:20px;
+    color: white;
+}
+input:hover{
+    background-color: white;
+    transition-duration: 70ms;
+    color:black;
+    border-radius: 5px;
+}
+input + input{
+    margin-left: 2%;
+}
+a{
+    color: black;
+    text-decoration: underline;
+}
+pre{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 32px;
+}
+        </style>
+        <title>О проекте</title>
+    </head>
+    <body>
+        <form action="" method="post">
+        <nav>
+            <input type="submit" name="Osn" value="Главная">
+                <input type="submit" name="O_Nas" value="О нас">
+                <input type="submit" name="O_Pr" value="О проекте">
+        </nav>
+        <p>Веб-приложение на основе DeepSort, которое будет трекать биометрические данные.</p>
+        <p>Для выполнения поставленной задачи мы собрали датасет и обучили его при помощи YOLOv5</p>
+        <p>Затем мы взяли код для DeepSort с <a href="https://github.com/Tomas542/DeepSort_Gstreamer">гит репозитория</a> и на его основе начали делать веб-приложение.</p>
+        </form>
+    </body>
+</html>
