@@ -9,6 +9,7 @@ FOLDER_WIT_FILE = '/home/lineked/PycharmProjects/deepsort_project/runs/track'
 ALLOWED_EXTENSIONS = {'mp4'}#Расширения файлов, которые можно загрузить
 
 app = Flask(__name__)
+app.config['SECRET_KEY']= 'oifeeowwffwefew342'
 
 
 @app.route('/', methods=['GET'])
@@ -26,7 +27,7 @@ def page_main():
         if file:
             filename = secure_filename(file.filename)
             if filename.split('.')[1] not in ALLOWED_EXTENSIONS:
-                flash('Нет выбранного файла')
+                flash('Неправильный тип файла. Пожалуйста, выберите файл формата .mp4', category='error')
             else:
                 file.save(os.path.join(UPLOAD_FOLDER, filename))
                 os.system(f'python3 track.py --source uploads/{filename} --yolo_model weights.pt --save-vid')
@@ -38,6 +39,8 @@ def page_main():
                 print(FOLDER_WITH_FILE)
                 time.sleep(30)
                 return send_from_directory(app.config['FOLDER_WITH_FILE'], filename, as_attachment=True)
+        else:
+            flash("Нет выбранного файла", category='error')
     return render_template('main.html')
 
 
