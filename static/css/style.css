@@ -1,0 +1,56 @@
+html {
+  font-size: 17px; /* px значит 'пиксели': базовый шрифт будет 10 пикселей в высоту  */
+  font-family: cursive;
+  background-color: rgb(42, 49, 59);
+}
+
+video {
+  color: black;
+  background-color: rgb(0, 169, 211);
+  width: 1000px;
+  margin-left: 25%;
+  margin-top: 12.3px;
+  border: 1px solid black;
+}
+body{
+    padding-top: 10px;
+    padding-bottom: 100px;
+    font-family: cursive;
+    letter-spacing: 0.7px;
+}
+nav {
+    background-color: rgb(38, 39, 51);
+    width: calc(100% - (-10px));
+    border-bottom: 10px;
+    margin-left: -10px;
+    height: 50px;
+}
+input{
+    background-color: rgb(50, 53, 69);
+    border: 0px;
+    margin-top: 12.3px;
+    border-radius: 5px;
+    margin-left: 45%;
+    font-family: system-ui;
+    transition-duration: 70ms;
+    font-size:20px;
+    color: rgb(189, 189, 189);
+}
+
+input:hover{
+    background-color: white;
+    transition-duration: 70ms;
+    color:black;
+    border-radius: 5px;
+}
+input + input{
+    margin-left: 2%;
+}
+a{
+    color: black;
+    text-decoration: underline;
+}
+pre{
+    font-family: cursive;
+    line-height: 32px;
+}
