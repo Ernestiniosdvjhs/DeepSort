@@ -13,12 +13,17 @@
                 <input type="submit" name="main" value="Главная">
                 <input type="submit" name="info" value="Информация">
             </nav>
-            <p>Видео:</p>
             <video src="video.mp4" controls></video>
+
         </form>
+        {% for cat, msg in get_flashed_messages(True) %}
+        <div class="flash {{cat}}">{{msg}}</div>
+        {% endfor %}
         <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="file">
-            <input type="submit" value="Трекинг">
+            <div class="input_file">
+                <input type="file" name="file">
+                <input type="submit" value="Начать">
+            </div>
         </form>
     </body>
 </html>
