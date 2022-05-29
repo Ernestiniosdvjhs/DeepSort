@@ -8,7 +8,6 @@ os.environ["NUMEXPR_NUM_THREADS"] = "1"
 
 import sys
 sys.path.insert(0, './yolov5')
-
 import argparse
 import os
 import platform
@@ -116,7 +115,6 @@ def detect(opt):
 
     # Get names and colors
     names = model.module.names if hasattr(model, 'module') else model.names
-
     # Run tracking
     model.warmup(imgsz=(1 if pt else nr_sources, 3, *imgsz))  # warmup
     dt, seen = [0.0, 0.0, 0.0, 0.0], 0
@@ -251,6 +249,7 @@ def detect(opt):
         LOGGER.info(f"Results saved to {colorstr('bold', save_dir)}{s}")
     if update:
         strip_optimizer(yolo_model)  # update model (to fix SourceChangeWarning)
+
 
 
 if __name__ == '__main__':
