@@ -1,0 +1,25 @@
+version: "3"
+services:
+  server:
+    build: .
+    container_name: deepsort_server
+    restart: always
+    ports:
+      - "8888:8888"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    container_name: db_deepsort
+    environment:
+      POSTGRES_DB: "db_track"
+      POSTGRES_USER: "admindb"
+      POSTGRES_PASSWORD: "pass"
+
+  adminer:
+    image: admin
+    container_name: admin_name
+    restart: always
+    ports:
+      - "8080:8080"
