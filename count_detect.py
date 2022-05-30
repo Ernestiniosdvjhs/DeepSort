@@ -1,11 +1,10 @@
-import os
-
 import psycopg2
 import cv2
+import os.path
 
 def db_connection():
     conn = psycopg2.connect(
-        host="localhost",
+        host="postgres",
         database="db_track",
         user="admindb",
         password="pass",
@@ -16,8 +15,14 @@ def db_connection():
 def count(filename):
     conn = db_connection()
     cur = conn.cursor()
-    TXTFILE = f'/home/lineked/PycharmProjects/deepsort_project/results/{filename[:-4]}.txt'
-    MP4FILE = f'/home/lineked/PycharmProjects/deepsort_project/results/{filename}'
+    cur.execute('CREATE TABLE IF NOT EXISTS data (id SERIAL NOT NULL,'
+                'filename VARCHAR NOT NULL,'
+                'duration_video VARCHAR NOT NULL,'
+                'statistic VARCHAR NOT NULL);'
+                )
+    conn.commit()
+    TXTFILE = f'{os.path.join(os.path.dirname(__file__))}/results/{filename[:-4]}.txt'
+    MP4FILE = f'{os.path.join(os.path.dirname(__file__))}/results/{filename}'
     video = cv2.VideoCapture(MP4FILE)
     fps = video.get(cv2.CAP_PROP_FPS)
     frame_count = video.get(cv2.CAP_PROP_FRAME_COUNT)
@@ -26,11 +31,11 @@ def count(filename):
     rem_sec = int(seconds % 60)
     duration = f"{minutes}:{rem_sec}"
     with open(TXTFILE) as file:
-        k = sum([1 for _ in file])
+        sum_detect = sum([1 for _ in file])
     cur.execute('INSERT INTO data (filename, duration_video, statistic)'
                 'VALUES (%s, %s, %s);',
                 (f'{filename}',
                  f'{duration}',
-                 f'{k}')
+                 f'{sum_detect}')
                 )
     conn.commit()
