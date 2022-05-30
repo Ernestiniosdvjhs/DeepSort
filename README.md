@@ -2,8 +2,8 @@
 
 Склонировать репозиторий:<br>git clone https://github.com/Ernestiniosdvjhs/DeepSort
 
-Установить зависимости:<br>pip install -r requirements.txt
+Первый запуск сервера для установки всех образов :<br>docker-compose up -d
 
-Запустить файл app.py из pycharm или при помощи команды:<br>python3 app.py
+Остановка сервера:<br>docker-compose stop 
     
-В случае ошибки "No mudule named: 'torchreid'" запустить файл setup.py:<br>python3 setup.py
+В дальнейшем запуск можно осуществлять с помощью команды:<br>docker-compose start 
