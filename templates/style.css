@@ -4,26 +4,16 @@ html {
   background-color: rgb(34, 33, 43);
   color: rgb(189, 189, 189);
 }
-video {
-  color: black;
-  background-color: rgb(0, 169, 211);
-  width: 1000px;
-  margin-left: 25%;
-  margin-top: 12.3px;
-  border: 1px solid black;
-}
-div#loading {
-    width: 35px;
-    height: 35px;
-    display: none;
-    background: url(loading.gif) no-repeat;
-    cursor: wait;
-    }
+
 .flash {
   padding: 8px;
   margin-left: 25%;
   margin-right: 22.8%;
   border-radius: 5px;
+}
+.flash.success{
+  font-size: 18px;
+  background: rgb(43, 102, 44);
 }
 .flash.nofile{
   font-size: 18px;
@@ -32,10 +22,6 @@ div#loading {
 .flash.error {
   font-size: 18px;
   background: rgb(135, 54, 54);
-}
-
-.input_file input[type=file]{
-    margin-left: 25%;
 }
 
 body{
@@ -72,13 +58,7 @@ input:hover{
     color:black;
     border-radius: 5px;
 }
-input + input{
-    margin-left: 1%;
-}
-a{
-    color: black;
-    text-decoration: underline;
-}
+
 pre{
     font-family: system-ui;
     line-height: 32px;

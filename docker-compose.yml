@@ -18,8 +18,8 @@ services:
       POSTGRES_PASSWORD: "pass"
 
   adminer:
-    image: admin
-    container_name: admin_name
+    image: adminer
+    container_name: admin_deepsort
     restart: always
     ports:
       - "8080:8080"

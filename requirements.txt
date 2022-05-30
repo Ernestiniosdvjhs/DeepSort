@@ -29,14 +29,15 @@ seaborn>=0.11.0
 easydict==1.9
 
 # torchreid
-Cython==0.29.30
-h5py==3.7.0
-six==1.14.0
-tb-nightly==2.10.0a20220526
-future==0.18.2
-yacs==0.1.8
-yapf==0.32.0
-gdown==4.4.0
+Cython
+h5py
+six
+tb-nightly
+future
+yacs
+gdown
+flake8
+yapf
 isort==4.3.21
-imageio==2.19.2
+imageio
 
