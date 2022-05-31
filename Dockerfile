@@ -6,6 +6,7 @@ COPY requirements.txt .
 #копирует requirements.txt в директорию 
 RUN pip install --no-cache-dir -r requirements.txt
 RUN apt-get update && apt-get install -y python3-opencv
+RUN apt-get install -y ffmpeg
 RUN pip install opencv-python
 #скачивает все необходимые библиотеки
 COPY . .
